@@ -103,7 +103,7 @@ CONFIG = {
         'POL/USDT'
     ],
     # --- MODO REAL ---
-    'paper_trading': False,  # <--- AGORA É REAL (mude para True para testes)
+    'paper_trading': True,  # <--- AGORA É REAL (mude para True para testes)
     'initial_capital_brl': 100.0,  # (Apenas referência, ele vai ler o saldo da Binance)
     'initial_capital_usdt': None,
     'base_quote': 'USDT',
