@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- CORES GERAIS (DARK MODE) --- */
+    --background: 0 0% 2%;       /* Preto Fundo */
+    --foreground: 0 0% 98%;      /* Texto Branco */
+
+    --card: 0 0% 4%;             /* Cartões Grafite */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 354 85% 55%;      /* Vermelho Neon Principal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 354 10% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 354 40% 10%;       /* Vermelho Sangue (Hover) */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 354 10% 12%;       /* Bordas Sutis */
+    --input: 354 10% 12%;
+    --ring: 354 85% 55%;
+
+    --radius: 1rem;
+
+    /* --- SIDEBAR --- */
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 354 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 354 30% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 354 10% 12%;
+    --sidebar-ring: 354 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Grid Tech de Fundo - Refinado */
+    background-image: 
+        linear-gradient(to right, rgba(220, 38, 38, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  /* --- CUSTOM SCROLLBAR (NOVO) --- */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(220, 38, 38, 0.2);
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 38, 38, 0.5);
+  }
+  
+  /* Classe utilitária para contêineres que precisam de scroll */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* Animações */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Efeito de Vidro Escuro - Melhorado */
+.glass-panel {
+  @apply bg-black/60 backdrop-blur-xl border border-red-900/20 shadow-2xl shadow-black/50 transition-all duration-300;
+}
+
+.glass-panel:hover {
+  @apply border-red-500/30 shadow-[0_0_20px_rgba(220,38,38,0.1)];
+}
